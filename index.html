@@ -1,0 +1,93 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Stack Knight - Hybrid Puzzle-Platformer</title>
+    <meta name="description"
+        content="A knight must climb an infinite tower by catching, stacking, and jumping on falling blocks.">
+    <meta name="keywords" content="game, platformer, puzzle, tetris, mario, stack knight">
+
+    <!-- Poki SDK -->
+    <script src="https://api.poki.com/api/poki-sdk.js"></script>
+
+    <!-- React Dependencies -->
+    <script src="./vendor/react.production.min.js"></script>
+    <script src="./vendor/react-dom.production.min.js"></script>
+    <script src="./vendor/babel.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="./vendor/tailwind.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <link href="./vendor/lucide.css" rel="stylesheet">
+
+    <!-- Local Google Fonts: Press Start 2P for 8-bit vibe -->
+    <link href="./vendor/local-fonts.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+        @layer theme {
+        :root {
+            --primary-color: #4169e1; /* Royal Blue */
+            --secondary-color: #b84a4a; /* Brick Red */
+            --bg-dark: #0a0f1f;
+            --bg-light: #2a1a3a;
+            --accent-gold: #ffd700;
+        }
+    }
+
+    @layer base {
+        html, body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111;
+            color: white;
+            overflow: hidden; /* Prevent scrolling when playing */
+            touch-action: none;
+            overscroll-behavior: none;
+        }
+        h1, h2, h3, .pixel-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+    }
+
+    @layer components {
+        .game-container {
+            @apply relative overflow-hidden rounded-lg shadow-2xl;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5), 0 0 40px rgba(65, 105, 225, 0.2);
+        }
+        .btn-pixel {
+            @apply px-6 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest transition-transform hover:scale-105 active:scale-95 border-b-4 border-blue-800 rounded-sm pixel-font text-sm;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+        }
+        .btn-pixel:hover {
+            @apply bg-blue-500;
+        }
+    }
+    </style>
+    <link rel="icon" href="./trickle/assets/favicon.png">
+    <meta property="og:title" content="Stack Knight - Hybrid Puzzle-Platformer">
+    <meta property="og:description"
+        content="A knight must climb an infinite tower by jumping on falling stacking blocks.">
+    <meta property="og:image" content="./trickle/assets/Jump.png">
+    <meta name="twitter:title" content="Stack Knight - Hybrid Puzzle-Platformer">
+    <meta name="twitter:description"
+        content="A knight must climb an infinite tower by jumping on falling stacking blocks.">
+    <meta name="twitter:image" content="./trickle/assets/Jump.png">
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- Game Scripts -->
+    <script type="text/babel" src="game/utils.js"></script>
+    <script type="text/babel" src="game/audio.js"></script>
+    <script type="text/babel" src="game/haptic.js"></script>
+    <script type="text/babel" src="game/poki-sdk.js"></script>
+    <script type="text/babel" src="game/entities.js"></script>
+    <script type="text/babel" src="game/engine.js"></script>
+    <script type="text/babel" src="components/StackKnightGame.js"></script>
+    <script type="text/babel" src="app.js"></script>
+
+</body>
+
+</html>
