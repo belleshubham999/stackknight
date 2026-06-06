@@ -170,34 +170,6 @@ function StackKnightGame() {
                 backgroundImage: 'radial-gradient(circle at 50% 50%, #2a1a3a 0%, #000 100%)'
             }}>
 
-            {/* Poki Hub Banner */}
-            {showPokiBanner && (
-                <div className="w-full max-w-[320px] mb-3 bg-gradient-to-r from-purple-600 to-purple-800 rounded-lg p-3 shadow-lg animate-pulse border border-purple-400">
-                    <div className="flex items-center justify-between gap-2">
-                        <div className="flex-1">
-                            <div className="text-white font-bold text-sm pixel-font">
-                                Play on Poki
-                            </div>
-                            <div className="text-purple-100 text-xs mt-0.5">
-                                Leaderboards, Achievements & More
-                            </div>
-                        </div>
-                        <button
-                            onClick={() => window.open('https://poki.com/en/g/stack-knight', '_blank')}
-                            className="bg-white text-purple-700 px-3 py-1.5 rounded font-bold text-xs whitespace-nowrap hover:bg-purple-100 transition-colors"
-                        >
-                            Play Now
-                        </button>
-                    </div>
-                    <button
-                        onClick={() => setShowPokiBanner(false)}
-                        className="absolute top-1 right-1 text-purple-200 hover:text-white text-lg leading-none"
-                    >
-                        ×
-                    </button>
-                </div>
-            )}
-
             <div className="game-container relative w-full max-w-[320px] h-auto aspect-[1/2] bg-black">
                 {/* Canvas Layer */}
                 <canvas
